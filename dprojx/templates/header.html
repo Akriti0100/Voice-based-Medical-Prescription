@@ -44,7 +44,7 @@
       <header>
          <div class="header-top wow fadeIn">
             <div class="container">
-               <a class="navbar-brand" href="index.html"><img src="{%static 'images/logo.png'%}" alt="image"></a>
+               <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="image"></a>
                <div class="right-header">
                   <div class="header-info">
                      <div class="info-inner">
@@ -76,7 +76,7 @@
             
                         <li><a class="navbar-link" href="http://127.0.0.1:8000/dappx/register/">Register</a></li>
                         {% if user.is_authenticated %}
-                            <li><a class="navbar-link" href=""> New Prescription</a></li>
+                            <li><a class="navbar-link" href="http://127.0.0.1:8000/dappx/newprescription/"> New Prescription</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
             <li><a href="http://127.0.0.1:8000/dappx/user_login/">Login</a></li>
