@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500');
+#log
+{
+    font-family: 'Poppins',sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: #5cb85c;
+}
+#sub{
+    padding-left: 140px;
+    padding-right: 140px;
+    font-family: 'Poppins',sans-serif;
+}

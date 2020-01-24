@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Base</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %}" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'%}" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
      <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <!-- Mobile Metas -->
@@ -21,8 +21,8 @@
    <link rel="apple-touch-icon" href="{%static 'images/apple-touch-icon.png'%}">
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
-  <link rel="stylesheet" href="{%static 'css/login.css'%}">
    <!-- Site CSS -->
+  <link rel="stylesheet" href="{%static 'css/login.css'%}">
    <link rel="stylesheet" href="{%static 'style.css'%}">
    <!-- Colors CSS -->
    <link rel="stylesheet" href="{%static 'css/colors.css'%}">
@@ -33,7 +33,7 @@
    <!-- Custom CSS -->
    <link rel="stylesheet" href="{%static 'css/custom.css'%}">
    <!-- Modernizer for Portfolio -->
-   <script src="{%static 'js/modernizer.js'}"></script>
+   <script src="{%static 'js/modernizer.js' %}"></script>
    <!-- [if lt IE 9] -->
   </head>
   <div id="preloader">
@@ -41,7 +41,6 @@
       </div>
       <!-- END LOADER -->
       <body>
-
       <header>
          <div class="header-top wow fadeIn">
             <div class="container">
@@ -73,50 +72,21 @@
 
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a data-scroll href="http://127.0.0.1:8000">Home</a></li>
+                        <li><a data-scroll href="#home">Home</a></li>
+            
                         <li><a class="navbar-link" href="http://127.0.0.1:8000/dappx/register/">Register</a></li>
                         {% if user.is_authenticated %}
+                            <li><a class="navbar-link" href=""> New Prescription</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
-            <li><a class="navbar-link" href="http://127.0.0.1:8000/dappx/user_login/">Login</a></li>
+            <li><a href="http://127.0.0.1:8000/dappx/user_login/">Login</a></li>
           {% endif %}
                      </ul>
                   </div>
                 </nav>
       </header>
           {% block body_block %}
-  <div class="container" id="log">
-    <div class="jumbotron">
-      <h1>Login here :</h1>
-
-
-<form method="post" action="{% url 'dappx:user_login' %}">
-          {% csrf_token %}
-          {# A more "HTML" way of creating the login form#}
-          <label for="username">Username:</label>
-          <input type="text" name="username" placeholder="Username">
-<label for="password">Password:</label>
-          <input type="password" name="password" placeholder="Password">
-<input type="submit" name="" value="Login">
-</form>
-
-<p> <br> </p>
-
-</div>
-  </div>
-              <form id="sub">
-  <div class="form-group" >
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-  <center><br><button type="submit" class="btn btn-primary">Submit</button></center>
-              </form>
-{% endblock %}
+      {% endblock %}
       <footer id="footer" class="footer-area wow fadeIn">
          <div class="container">
             <div class="row">
@@ -194,4 +164,3 @@
       <!-- map -->
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
     </body>
-
