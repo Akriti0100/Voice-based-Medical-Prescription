@@ -33,7 +33,7 @@
    <!-- Custom CSS -->
    <link rel="stylesheet" href="{%static 'css/custom.css'%}">
    <!-- Modernizer for Portfolio -->
-   <script src="{%static 'js/modernizer.js'}"></script>
+   <script src="{%static 'js/modernizer.js' %}"></script>
    <!-- [if lt IE 9] -->
   </head>
   <div id="preloader">
@@ -76,6 +76,7 @@
             
                         <li><a class="navbar-link" href="http://127.0.0.1:8000/dappx/register/">Register</a></li>
                         {% if user.is_authenticated %}
+                            <li><a class="navbar-link" href=""> New Prescription</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
             <li><a href="http://127.0.0.1:8000/dappx/user_login/">Login</a></li>
