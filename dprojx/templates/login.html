@@ -87,36 +87,29 @@
       </header>
           {% block body_block %}
   <div class="container" id="log">
+                  <br>
     <div class="jumbotron">
-      <h1>Login here :</h1>
+                  <h1>hello</h1>
 
-
+      <h1>Login here :</h1><br>
 <form method="post" action="{% url 'dappx:user_login' %}">
           {% csrf_token %}
-          {# A more "HTML" way of creating the login form#}
-          <label for="username">Username:</label>
-          <input type="text" name="username" placeholder="Username">
-<label for="password">Password:</label>
-          <input type="password" name="password" placeholder="Password">
-<input type="submit" name="" value="Login">
+           A more "HTML" way of creating the login form
+                  <br><br>
+          <center> <label for="username">Username:</label></center>
+                  <br>
+          <center><input type="text" name="username" placeholder="Username"></center>
+                  <br><br>
+<center><label for="password">Password:</label></center>
+          <center><input type="password" name="password" placeholder="Password"></center>
+    <br><br>
+            <center>  <input type="submit" name="" value="Login"> </center>
 </form>
 
 <p> <br> </p>
 
 </div>
   </div>
-              <form id="sub">
-  <div class="form-group" >
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-  <center><br><button type="submit" class="btn btn-primary">Submit</button></center>
-              </form>
 {% endblock %}
       <footer id="footer" class="footer-area wow fadeIn">
          <div class="container">
