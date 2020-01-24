@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^special/', views.special, name='special'),
     url(r'^dappx/', include('dappx.urls')),
     url(r'^logout/$', views.user_logout, name='logout'),
+
 ]

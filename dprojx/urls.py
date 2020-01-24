@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^special/', views.special, name='special'),
     url(r'^dappx/', include('dappx.urls')),
+    url(r'^newprescription',views.newpre, name = 'newprescription'),
     url(r'^logout/$', views.user_logout, name='logout'),
 ]
