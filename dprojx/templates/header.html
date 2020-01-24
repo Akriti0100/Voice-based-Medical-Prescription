@@ -71,7 +71,7 @@
 
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a data-scroll href="http://127.0.0.1:8000">Home</a></li>
+                        <li><a data-scroll href="#home">Home</a></li>
             
                         <li><a class="navbar-link" href="http://127.0.0.1:8000/dappx/register/">Register</a></li>
                         {% if user.is_authenticated %}
@@ -83,25 +83,8 @@
                   </div>
                 </nav>
       </header>
-{% block body_block %}
-  <div class="container">
-    <div class="jumbotron">
-      {% if registered %}
-        <h1>Thank you for registering!</h1>
-      {% else %}
-        <h1>Register Here</h1>
-        <h3>Just fill out the form.</h3>
-<form enctype="multipart/form-data" method="POST">
-          {% csrf_token %}
-          {{ user_form.as_p }}
-          {{ profile_form.as_p }}
-          <input type="submit" name="" value="Register">
-        </form>
-        
-      {% endif %}
-    </div>
-  </div>
-{% endblock %}
+          {% block body_block %}
+      {% endblock %}
       <footer id="footer" class="footer-area wow fadeIn">
          <div class="container">
             <div class="row">
@@ -179,8 +162,3 @@
       <!-- map -->
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
     </body>
-
-
-
-
-
