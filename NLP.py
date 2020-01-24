@@ -7,6 +7,12 @@ stopword = nltk.corpus.stopwords.words('english')
 s = "patients name is saraj sharma  He is 25  years old and was born on 28th february 1999 he has acute bronchitis He is having symptoms which are dry cough for the last 3 days no fever and running nose he has the following medicines prescribed  azithromycin 500 mg once a day for 3 days and robitussin 5 ml thrice a day for 5 days he is advised to drink warm water and he is not allowed to eat grapes"
 s = s.lower()
 z = re.split(' he ',s)
+if(len(z)<2):
+    z = re.split(' she ', s)
+    GEN = "FEMALE"
+else:
+    GEN = "MALE"
+
 data = pd.DataFrame(z)
 data.columns = ['body']
 def tokenize(text):
@@ -17,10 +23,22 @@ def remove_stopwords(list):
     text = [word for word in list if word not in stopword]
     return text
 data['body_text'] = data['body_text_clean'].apply(lambda x: remove_stopwords(x))
+for e in range(0,len(data['body_text'])-1):
+    t = len(data['body_text'][e])
+    for m in range(0,t):
+        x = re.search(" suff", data['body_text'][e])
+        if(x.start()):
+            index_s = e
+            break
+        y = re.search(" symptoms ", data['body_text'][e])
+        if(y.start()):
+            index_symp = e
+            break
+
 S = ' '.join(data['body_text'][0])
 Name = re.split('name',S)[1]
 D = ' '.join(data['body_text'][1])
-Age = re.findall('^\d\d',D)[0]
+Age = re.findall(' \d\d ',s)[0]
 Suffer = ' '.join(data['body_text'][2])
 S2 = re.split('suffering',Suffer)
 if(len(S2)<2):
@@ -41,6 +59,7 @@ for i in range(5, len(z)):
 
 print('Name: '+Name + "\n")
 print('Age: '+Age + "\n")
+print('Gender: '+GEN + "\n")
 print('Diagnosis: ' + S4 + "\n")
 print('Symptoms: '+ Symptoms + "\n")
 print('Medicine: ')
