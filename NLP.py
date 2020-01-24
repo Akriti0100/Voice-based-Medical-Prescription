@@ -31,7 +31,8 @@ for e in range(0,len(data['body_text'])-1):
 
 S = ' '.join(data['body_text'][0]) ## NAmE
 Name = re.split('name',S)[1]   ## NAmE
-D = ' '.join(data['body_text'][1]) ## AGE
+if(len(Name)<2):
+    Name = S[0] + S[1]
 Age = re.findall(' \d\d ',s)[0]  ## AGE
 ## SAME INDEX of BOTH SYMPTOMS and SUFFERINGS
 if(index_su == index_sy):
