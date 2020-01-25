@@ -35,7 +35,7 @@ def register(request):
     else:
         user_form = UserForm()
         profile_form = UserProfileInfoForm()
-    return render(request,'registration.html',
+    return render(request, 'registration.html',
                           {'user_form':user_form,
                            'profile_form':profile_form,
                            'registered':registered})
@@ -58,3 +58,7 @@ def user_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, 'login.html', {})
+
+
+def newpre(request):
+    return render(request, 'newprescription.html', {})
