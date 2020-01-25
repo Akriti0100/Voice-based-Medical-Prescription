@@ -4,16 +4,23 @@
     <p><strong>{{ error_message }}</strong></p>
 {% endif %}
         <div>
-            <form action="preview/" method="post">
-                {% csrf_token %}
-                <label for="result">Your text will appear here: </label>
-                <input id="result" type="text" name="result"><br>
-                <input type="submit" value="Preview">
-            </form>
-            <div id= 'record'>
-                    <button onclick="startConverting()" class='btn btn-info btn-sm' id="re">record</button>
+            <div id='result'>
+              Your text will appear here
             </div>
-        </div>
+            <br>
+            <div id= 'record'>
+                <button onclick="startConverting()" class='btn btn-info btn-sm' id="re">record</button>
+                <button onclick="stopRecording()" class='btn btn-info btn-sm' id="re">stop</button>
+            </div>
+            <form action="preview/" method="POST">
+                {% csrf_token %}
+                <label for="abc">Result:</label>
+                <input id="abc" type="text" name="text" ><br>
+                <input type="submit" value="Preview" >
+            </form>
+            <script src="{% static 'app.js' %}"></script>
+            <script src="{% static 'my_jquery.js' %}"></script>
+          </div>
 
 
 
