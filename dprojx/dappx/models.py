@@ -8,3 +8,16 @@ class UserProfileInfo(models.Model):
     profile_pic = models.ImageField(upload_to='profile_pics',blank=True)
 def __str__(self):
     return self.user.username
+
+Gender_Choices=(
+    ("Male","Male"),
+    ("Female","Female"),
+    ("Others","Others"),
+)
+
+class Menu(models.Model):
+      Name  = models.CharField(max_length=100)
+      Age = models.CharField(max_length=100)
+      Gender = Gender_Choices
+
+
