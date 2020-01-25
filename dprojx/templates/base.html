@@ -3,7 +3,7 @@
 <body>
    {% block body_block %}
    {% endblock %}
-      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
+      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('static/images/slider-bg.png');">
          <div class="container">
             <div class="row">
                <div class="col-md-12 col-sm-12">
@@ -81,7 +81,9 @@
                <div class="col-md-6">
                   <div class="post-media wow fadeIn">
                      <img src="{%static 'static/images/about_03.jpg'%}" alt="" class="img-responsive">
-                     <a href="{%static 'http://www.youtube.com/watch?v=nrJtHemSPW4'%}" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                     <a href="{%static 'http://www.youtube.com/watch?v=nrJtHemSPW4' %}" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                  <iframe width="425" height="591" src="https://www.youtube.com/embed/wQ2TN_gI3sE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{#                   <iframe width="425" height="349" src="http://www.youtube.com/embed/UnBlst3T7bY" frameborder="0" allowfullscreen></iframe>#}
                   </div>
                   <!-- end media -->
                </div>
@@ -135,6 +137,7 @@
          </div>
          <!-- end container -->
       </div>
+
       <div id="service" class="services wow fadeIn">
          <div class="container">
             <div class="row">

@@ -94,7 +94,8 @@
       <h1>Login here :</h1><br>
 <form method="post" action="{% url 'dappx:user_login' %}">
           {% csrf_token %}
-           A more "HTML" way of creating the login form
+           {#A more "HTML" way of creating the login form#}
+                  <p style="font-family: 'Poppins'"> Please enter your details here: </p>
                   <br><br>
           <center> <label for="username">Username:</label></center>
                   <br>
@@ -103,7 +104,8 @@
 <center><label for="password">Password:</label></center>
           <center><input type="password" name="password" placeholder="Password"></center>
     <br><br>
-            <center>  <input type="submit" name="" value="Login"> </center>
+                  <button type="submit" class="btn btn-primary btn-lg btn-block" value="Login">Submit</button>
+            {#<center>  <input type="submit" name="" value="Login"> </center>#}
 </form>
 
 <p> <br> </p>
