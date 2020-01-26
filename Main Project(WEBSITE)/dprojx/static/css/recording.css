@@ -1,0 +1,39 @@
+#result
+{
+    font-family: 'Open Sans', sans-serif;
+}
+#record
+{
+      padding: 55px 622px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-size: 30px;
+}
+#heading
+{
+    padding-top: 100px;
+    padding-left: 540px;
+}
+#abc
+{
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+#forms
+{
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 622px;
+}
+#preview
+{
+    background-color: aqua;
+}
+img
+{
+      border-radius: 50%;
+}
+.button5 {
+    border-radius: 90%;
+}
+#foo
+{
+    padding-left: 65px;
+}

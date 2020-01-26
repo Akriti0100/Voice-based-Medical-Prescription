@@ -1,0 +1,28 @@
+{% extends 'base1.html' %}
+{% load static %}
+<script src="{% static 'app.js' %}"></script>
+{% block body_block %}
+    <br>
+    <br><br><br><br><br><br><br><br>
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+        <div>
+            <div id='result'>
+              Your text will appear here
+            </div>
+            <br>
+            <div id= 'record'>
+                <button onclick="startConverting()" class='btn btn-info btn-sm' id="re">record</button>
+                <button onclick="stopRecording()" class='btn btn-info btn-sm' id="re">stop</button>
+            </div>
+            <form action="{% url 'dappx:new' %}" method="POST">
+                {% csrf_token %}
+                <label for="abc">Result:</label>
+                <input id="abc" type="text" name="text" ><br>
+                <input type="submit" value="Preview" >
+            </form>
+            <script src="{% static 'app.js' %}"></script>
+            <script src="{% static 'my_jquery.js' %}"></script>
+          </div>
+{% endblock %}
